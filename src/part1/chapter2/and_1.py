@@ -1,4 +1,6 @@
 def and_gate(x1, x2):
+    # y = 0 (w1x1 + w2x2 <= theta)
+    # y = 1 (w1x1 + w2x2 > theta)
     w1, w2, theta = 0.5, 0.5, 0.7
     tmp = w1 * x1 + w2 * x2
 
