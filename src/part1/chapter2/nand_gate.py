@@ -1,0 +1,22 @@
+import numpy as np
+
+
+def nand_gate(x1, x2):
+    # y = 0 (bias + w.Tx <= 0)
+    # y = 1 (bias + w.Tx > 0)
+    x = np.array([x1, x2])
+    w = np.array([-0.5, -0.5])
+    bias = 0.7
+    tmp = np.sum(w * x) + bias
+
+    if tmp <= 0:
+        return 0
+    elif tmp > 0:
+        return 1
+
+
+if __name__ == "__main__":
+    print(f"NAND(0,0)= {nand_gate(0,0)}")
+    print(f"NAND(1,0)= {nand_gate(1,0)}")
+    print(f"NAND(0,1)= {nand_gate(0,1)}")
+    print(f"NAND(1,1)= {nand_gate(1,1)}")
