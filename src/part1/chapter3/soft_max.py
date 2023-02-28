@@ -9,12 +9,8 @@ def soft_max_naive(x):
 
 
 def soft_max(x):
-    const = np.max(x)
-    x = x - const
-    exp = np.exp(x)
-
-    y = exp / np.sum(exp)
-    return y
+    x = x - np.max(x, axis=-1, keepdims=True)
+    return np.exp(x) / np.sum(np.exp(x), axis=-1, keepdims=True)
 
 
 if __name__ == "__main__":
