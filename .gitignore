@@ -2,3 +2,4 @@ __pycache__/
 src/part1/chapter1/
 dataset/
 *.pkl
+git_old/
